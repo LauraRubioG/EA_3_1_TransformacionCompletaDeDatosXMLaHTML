@@ -11,8 +11,49 @@
             </head>
             <body>
                 <div class="container">
-                    <h1>Panel de Control de Reservas</h1>
-                    <p class="total">Total de reservas: <strong><xsl:value-of select="count(//reserva)"/></strong></p>
+                    <h1>📊 Dashboard de Reservas</h1>
+                    <p class="total">Visión general del estado del restaurante</p>
+
+                    <!-- PANEL DASHBOARD CON XPATH -->
+                    <div class="dashboard-grid">
+                        
+                        <!-- Tarjeta 1: Estado de las reservas -->
+                        <div class="stat-card stat-status">
+                            <div class="stat-title">📈 Estado Ocupación</div>
+                            <div class="stat-value">
+                                <xsl:value-of select="count(//reserva[@estado='confirmada'])"/>
+                                <span style="font-size:0.5em; color:#bdc3c7;"> / <xsl:value-of select="count(//reserva)"/></span>
+                            </div>
+                            <div class="stat-subtitle">Reservas confirmadas (total)</div>
+                        </div>
+
+                        <!-- Tarjeta 2: Ingresos proyectados -->
+                        <div class="stat-card stat-revenue">
+                            <div class="stat-title">💶 Ingresos Estimados</div>
+                            <div class="stat-value">
+                                <xsl:value-of select="sum(//reserva/datos-reserva/@pago)"/>€
+                            </div>
+                            <div class="stat-subtitle">Suma de reservas con pago</div>
+                        </div>
+
+                        <!-- Tarjeta 3: Media de comensales -->
+                        <div class="stat-card stat-diners">
+                            <div class="stat-title">🍽️ Media Comensales</div>
+                            <div class="stat-value">
+                                <xsl:value-of select="format-number(sum(//reserva/datos-reserva/numero-comensales) div count(//reserva), '#.0')"/>
+                            </div>
+                            <div class="stat-subtitle">Comensales totales: <xsl:value-of select="sum(//reserva/datos-reserva/numero-comensales)"/></div>
+                        </div>
+
+                        <!-- Tarjeta 4: Alerta de riesgo (Negocio) -->
+                        <div class="stat-card stat-alerts">
+                            <div class="stat-title">⚠️ Faltan por pagar</div>
+                            <div class="stat-value" style="color:#c0392b;">
+                                <xsl:value-of select="count(//reserva[not(datos-reserva/@pago)])"/>
+                            </div>
+                            <div class="stat-subtitle">Reservas de riesgo sin importe</div>
+                        </div>
+                    </div>
                     
                     <table>
                         <thead>
@@ -78,6 +119,11 @@
                 Zona: <xsl:value-of select="datos-reserva/zona-preferencia"/><br/>
                 Pax: <xsl:value-of select="datos-reserva/numero-comensales"/><br/>
                 Menú: <xsl:value-of select="datos-reserva/@tipo-plato"/>
+                
+                <!-- ALERTA: Grupo Grande (Más de 4) -->
+                <xsl:if test="datos-reserva/numero-comensales > 4">
+                    <br/><span class="badge-alerta">👥 Grupo Grande</span>
+                </xsl:if>
             </td>
             
             <td>
@@ -86,6 +132,11 @@
                 </xsl:if>
                 <xsl:if test="not(datos-reserva/@pago)">
                     <small>Pendiente pago</small>
+                </xsl:if>
+                
+                <!-- ALERTA: Cliente VIP (Gasto > 50€) -->
+                <xsl:if test="datos-reserva/@pago > 50">
+                    <br/><span class="badge-vip">⭐ Cliente VIP</span>
                 </xsl:if>
             </td>
             

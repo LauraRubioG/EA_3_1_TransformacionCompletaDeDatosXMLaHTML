@@ -21,8 +21,53 @@ h1 {
 
 .total {
     font-size: 1.1em;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS DEL DASHBOARD (NUEVO) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 20px 0 30px 0;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    border-left: 5px solid #3498db;
+}
+
+.stat-status { border-left-color: #3498db; }
+.stat-revenue { border-left-color: #27ae60; }
+.stat-diners { border-left-color: #8e44ad; }
+.stat-alerts { border-left-color: #e74c3c; }
+
+.stat-title {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.stat-subtitle {
+    font-size: 0.85em;
+    color: #95a5a6;
+    margin-top: 5px;
 }
 
 table {
@@ -76,4 +121,29 @@ td {
     border-radius: 3px;
     font-size: 0.8em;
     margin-top: 5px;
+}
+
+/* --- ETIQUETAS Y ALERTAS (NUEVO) --- */
+.badge-alerta {
+    display: inline-block;
+    background: #fdf2e9;
+    color: #e67e22;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: bold;
+    border: 1px solid #fbdcb9;
+}
+
+.badge-vip {
+    display: inline-block;
+    background: #fef9e7;
+    color: #f39c12;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: bold;
+    border: 1px solid #f1c40f;
 }
