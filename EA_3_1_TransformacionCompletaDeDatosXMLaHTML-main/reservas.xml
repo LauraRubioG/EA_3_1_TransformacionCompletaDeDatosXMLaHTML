@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="reservas.xsl"?>
+ <reservas>
+   
+    <reserva id="SM-1" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales N</nombre-local>
+            <direccion>Calle de la Princesa 12, Madrid</direccion>
+            <telefono-local>910000001</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Juan Pérez</nombre-cliente>
+            <telefono-cliente>600000001</telefono-cliente>
+            <email>juan@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="menu" pago="25.50">
+            <fecha>2024-06-01</fecha>
+            <hora>14:00</hora>
+            <numero-comensales>2</numero-comensales>
+            <zona-preferencia mesa="I-01">interior</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>gluten</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Cerca de la entrada</notas-adicionales>
+            <sillita-bebe/>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SS-1" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales S</nombre-local>
+            <direccion>Avenida de la Constitución 5, Sevilla</direccion>
+            <telefono-local>954000002</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Ana García</nombre-cliente>
+            <telefono-cliente>600000002</telefono-cliente>
+            <email>ana@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="carta" pago="40.00">
+            <fecha>2024-06-02</fecha>
+            <hora>21:00</hora>
+            <numero-comensales>4</numero-comensales>
+            <zona-preferencia mesa="T-05">terraza</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>ninguna</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Mesa con sombra</notas-adicionales>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SS-2" estado="pendiente">
+        <local>
+            <nombre-local>Sabores Globales S</nombre-local>
+            <direccion>Avenida de la Constitución 5, Sevilla</direccion>
+            <telefono-local>954000002</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Luis Mara</nombre-cliente>
+            <telefono-cliente>600000003</telefono-cliente>
+            <email>luis@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="menu">
+            <fecha>2024-06-02</fecha>
+            <hora>14:30</hora>
+            <numero-comensales>3</numero-comensales>
+            <zona-preferencia mesa="I-10">interior</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>lactosa</alergia>
+            </alergias-restricciones>
+            <notas-adicionales></notas-adicionales>
+            <sillita-bebe/>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SB-1" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales E</nombre-local>
+            <direccion>Carrer de Mallorca 200, Barcelona</direccion>
+            <telefono-local>930000003</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Marta Rius</nombre-cliente>
+            <telefono-cliente>600000004</telefono-cliente>
+            <email>marta@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="degustacion" pago="85.00">
+            <fecha>2024-06-05</fecha>
+            <hora>20:30</hora>
+            <numero-comensales>2</numero-comensales>
+            <zona-preferencia mesa="B-02">barra</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>frutos secos</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Aniversario</notas-adicionales>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SV-1" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales O</nombre-local>
+            <direccion>Calle de la Paz 8, Valencia</direccion>
+            <telefono-local>960000004</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Pedro Soler</nombre-cliente>
+            <telefono-cliente>600000005</telefono-cliente>
+            <email>pedro@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="carta">
+            <fecha>2024-06-07</fecha>
+            <hora>22:00</hora>
+            <numero-comensales>5</numero-comensales>
+            <zona-preferencia mesa="J-01">jardin</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>marisco</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Mesa tranquila</notas-adicionales>
+            <sillita-bebe/>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SM-2" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales N</nombre-local>
+            <direccion>Calle de la Princesa 12, Madrid</direccion>
+            <telefono-local>910000001</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Elena Sanz</nombre-cliente>
+            <telefono-cliente>600000006</telefono-cliente>
+            <email>elena@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="menu" pago="15.00">
+            <fecha>2024-06-08</fecha>
+            <hora>13:30</hora>
+            <numero-comensales>1</numero-comensales>
+            <zona-preferencia mesa="B-05">barra</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>ninguna</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Cliente habitual</notas-adicionales>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SB-1" estado="pendiente">
+        <local>
+            <nombre-local>Sabores Globales N</nombre-local>
+            <direccion>Gran Vía 40, Bilbao</direccion>
+            <telefono-local>944000005</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Iker Muni</nombre-cliente>
+            <telefono-cliente>600000007</telefono-cliente>
+            <email>iker@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="carta" pago="60.00">
+            <fecha>2024-06-10</fecha>
+            <hora>21:45</hora>
+            <numero-comensales>6</numero-comensales>
+            <zona-preferencia mesa="I-15">interior</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>huevo</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Reunión de empresa</notas-adicionales>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SM-1" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales S</nombre-local>
+            <direccion>Calle Larios 2, Málaga</direccion>
+            <telefono-local>952000006</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Rosa Díaz</nombre-cliente>
+            <telefono-cliente>600000008</telefono-cliente>
+            <email>rosa@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="menu">
+            <fecha>2024-06-12</fecha>
+            <hora>14:00</hora>
+            <numero-comensales>2</numero-comensales>
+            <zona-preferencia mesa="T-08">terraza</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>ninguna</alergia>
+            </alergias-restricciones>
+            <notas-adicionales></notas-adicionales>
+            <sillita-bebe/>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SZ-1" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales E</nombre-local>
+            <direccion>Paseo Independencia 10, Zaragoza</direccion>
+            <telefono-local>976000007</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Marcos Oro</nombre-cliente>
+            <telefono-cliente>600000009</telefono-cliente>
+            <email>marcos@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="carta" pago="35.00">
+            <fecha>2024-06-14</fecha>
+            <hora>22:15</hora>
+            <numero-comensales>4</numero-comensales>
+            <zona-preferencia mesa="I-04">interior</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>soja</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Mesa cerca del aire acondicionado</notas-adicionales>
+        </preferencias>
+    </reserva>
+    
+    <reserva id="SS-3" estado="confirmada">
+        <local>
+            <nombre-local>Sabores Globales S</nombre-local>
+            <direccion>Avenida de la Constitución 5, Sevilla</direccion>
+            <telefono-local>954000002</telefono-local>
+        </local>
+        <cliente>
+            <nombre-cliente>Sofía Gil</nombre-cliente>
+            <telefono-cliente>600000010</telefono-cliente>
+            <email>sofia@email.com</email>
+        </cliente>
+        <datos-reserva tipo-plato="degustacion" pago="110.00">
+            <fecha>2024-06-15</fecha>
+            <hora>21:00</hora>
+            <numero-comensales>2</numero-comensales>
+            <zona-preferencia mesa="J-05">jardin</zona-preferencia>
+        </datos-reserva>
+        <preferencias>
+            <alergias-restricciones>
+                <alergia>ninguna</alergia>
+            </alergias-restricciones>
+            <notas-adicionales>Prefieren el jardín</notas-adicionales>
+        </preferencias>
+    </reserva>
+
+</reservas>
