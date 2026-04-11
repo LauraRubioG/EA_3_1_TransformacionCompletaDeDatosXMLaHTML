@@ -111,8 +111,8 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>ID / Estado</th>
-                                <th>Cliente / Contacto</th>
+                                <th>Local / Estado Reserva</th>
+                                <th>Información Cliente</th>
                                 <th>Localización</th>
                                 <th>Fecha y Hora</th>
                                 <th>Detalles Reserva</th>
