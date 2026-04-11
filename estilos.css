@@ -100,7 +100,7 @@ th {
     background: linear-gradient(135deg, var(--muted-teal) 0%, #4a7061 100%);
     color: white;
     padding: 18px 20px;
-    text-align: left;
+    text-align: center;
     font-size: 1.05em;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -143,6 +143,17 @@ td {
     font-weight: bold;
 }
 
+.alerta-pago {
+    display: inline-block;
+    background-color: #fffafb;
+    color: var(--sweet-peony);
+    border: 1px solid var(--sweet-peony);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
 .etiqueta-bebe {
     display: inline-block;
     border: 1px solid var(--cotton-rose);
@@ -158,17 +169,6 @@ td {
 .etiqueta-alerta {
     display: inline-block;
     background: var(--sweet-peony);
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-.etiqueta-vip {
-    display: inline-block;
-    background: var(--muted-teal);
     color: white;
     padding: 2px 6px;
     border-radius: 4px;

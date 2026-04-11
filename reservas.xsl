@@ -54,7 +54,7 @@
                         
                         <!-- Tarjeta 1: Estado de las reservas -->
                         <div class="tarjeta-estadistica estadistica-estado">
-                            <div class="titulo-estadistica">Estado Ocupación</div>
+                            <div class="titulo-estadistica">confirmaciones</div>
                             <div class="valor-estadistica">
                                 <!-- 
                                   <xsl:value-of>: Esta es la etiqueta que más vas a usar. Sirve para IMPRIMIR un valor en la pantalla.
@@ -242,21 +242,16 @@
                 </xsl:if>
             </td>
             
-            <td>
+            <td style="text-align: center; vertical-align: middle;">
                 <xsl:if test="datos-reserva/@pago">
                     <span class="precio"><xsl:value-of select="datos-reserva/@pago"/>€</span>
                 </xsl:if>
                 <xsl:if test="not(datos-reserva/@pago)">
-                    <small>Pendiente pago</small>
-                </xsl:if>
-                
-                <!-- ALERTA: Cliente VIP (Gasto > 50€) -->
-                <xsl:if test="datos-reserva/@pago > 50">
-                    <br/><span class="etiqueta-vip">CLIENTE VIP</span>
+                    <span class="alerta-pago">⚠️ Pendiente pago</span>
                 </xsl:if>
             </td>
             
-            <td>
+            <td style="text-align: center; vertical-align: middle;">
                 <!-- 
                   <xsl:for-each>: Es un bucle repetidor. 
                   Le estamos diciendo: "Busca dentro del XML todas las etiquetas <alergia> de este cliente 
@@ -285,7 +280,7 @@
                     -->
                     <xsl:element name="span">
                         <xsl:attribute name="class">etiqueta-bebe</xsl:attribute>
-                        [i] Sillita bebé
+                        👶🪑 Sillita bebé
                     </xsl:element><br/>
                 </xsl:if>
                 
