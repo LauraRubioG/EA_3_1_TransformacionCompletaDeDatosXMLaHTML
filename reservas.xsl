@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--CONFIGURACION INICIAL-->
 <!-- 
-  ========================================================================================
-  <xsl:stylesheet>: Esta es la etiqueta principal que envuelve todo. Le dice al ordenador 
-  "Oye, este archivo es una hoja de transformación XSLT". Es como la portada de nuestro libro de reglas.
-  ========================================================================================
+  <xsl:stylesheet>: Es la etiqueta principal, es la que nos indica que es un archivo XSLT. El elemento raiz.
+  y el xml:xsl que tiene dentro como atributo nos indica la dirección oficial de las reglas de un XSLT
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
     <!-- 
-      <xsl:output>: Le dice al sistema cómo queremos que salga el resultado final. 
-      Aquí le estamos diciendo: "Quiero que el resultado sea código HTML, usando 
-      texto estándar (UTF-8) y que me lo pongas ordenadito con saltos de línea (indent='yes')"
+      <xsl:output>: Esta etiqueta configura cómo será el archivo final. Es decir, dice "De esto saca un HTML,
+      usando el idioma de caracteres UFT-8(que este sirve para que se vean las tildes y la ñ) y
+      ponlo ordenado, para ello el 'indent'"
     -->
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     
     <!-- 
       <xsl:strip-space> y <xsl:preserve-space>: 
-      Imagina que tu XML tiene muchos espacios en blanco y saltos de línea inútiles entre las etiquetas. 
-      'strip-space' elimina esos huecos vacíos para que el procesamiento sea más rápido.
-      Sin embargo, con 'preserve-space' le decimos: "¡Ojo! En las notas adicionales NO me borres 
-      los espacios, porque ahí el cliente ha escrito frases normales y necesitamos los espacios entre palabras".
+      Usamos strip-space para limpiar los espacios en blanco innecesarios que vienen del XML, esto lo usamos para
+      no ensuciar el código.
+      Y el preserve-space es para todo lo contrario, para no borrar esos espacio. Por ello aqui lo usamos para
+      indicarle que no borre los espacios de notas-adicionales
     -->
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="notas-adicionales"/>
 
+    <!-- ESTRUCTURA PRINCIPAL -->
+
     <!-- 
-      ========================================================================================
-      <xsl:template match="/">: ESTE ES EL PUNTO DE PARTIDA.
-      La barra "/" significa "la raíz" o "el principio de todo el documento XML". 
-      Es como decir: "Cuando empieces a leer el XML, empieza a pintar este esqueleto HTML básico".
-      ========================================================================================
+      <xsl:template match="/">: Esta estiquieta es el 'Cerebro'. El simbolo / indica que todo lo siguiente se aplica
+      el inicio del XML. Y aquí dentro es donde se crea la estructura de la página HTML, usanod el <head> y el <body>
     -->
     <xsl:template match="/">
         <html>
@@ -40,26 +38,27 @@
             </head>
             <body>
                 <!-- 
-                  <xsl:comment>: Esto sirve para meter un comentario en el código HTML resultante final. 
-                  Si alguien le da a "Ver código fuente" en el navegador web, verá esto. 
-                  Pero NO se muestra escrito de forma normal en la pantalla de la página web.
+                  <xsl:comment>: Esta etiqueta crea un comentario que aparecerá en el código fuente de la web, pero que el usuario no
+                  verá en la pantalla. Es decir, si tenemos por ejemplo un HTML de un XSLT bastante dificil, con esta etiqueta podemos
+                  poner "pistas" dentro del código para nosotros o para otros programadores que vean el código en el fututo
                 -->
                 <xsl:comment> Dashboard HTML generado dinámicamente mediante XSLT </xsl:comment>
                 <div class="contenedor">
                     <h1>DASHBOARD DE RESERVAS</h1>
                     <p class="total">Análisis y estado general del restaurante</p>
 
-                    <!-- PANEL DASHBOARD CON XPATH -->
+                    <!-- PANEL CON XPATH -->
                     <div class="panel-cuadricula">
                         
-                        <!-- Tarjeta 1: Estado de las reservas -->
+                        <!-- Consula XPATH 1: Estado de las reservas -->
                         <div class="tarjeta-estadistica estadistica-estado">
                             <div class="titulo-estadistica">confirmaciones</div>
                             <div class="valor-estadistica">
                                 <!-- 
-                                  <xsl:value-of>: Esta es la etiqueta que más vas a usar. Sirve para IMPRIMIR un valor en la pantalla.
-                                  Va al XML, hace el cálculo o busca el dato que le pides en el 'select', y escupe el texto aquí.
-                                  En este caso le decimos "cuenta (count) cuántas reservas tienen el estado 'confirmada'".
+                                  <xsl:value-of>: Esta etiqueta sirve para mostrar un valor por pantalla. Va al XML
+                                  y coge o calcula el dato que le pedimos en el 'select' de la etiqueta, y lo muestra.
+                                  En esta consulta le decimos que cuenta cuántas reservas tenemos confirmadas.
+                                  Va a reserva, al atributo estado y mira las que indica confirmadas y las cuenta.
                                 -->
                                 <xsl:value-of select="count(//reserva[@estado='confirmada'])"/>
                                 <span style="font-size:0.5em; color:#bdc3c7;"> / <xsl:value-of select="count(//reserva)"/></span>
@@ -67,7 +66,7 @@
                             <div class="subtitulo-estadistica">Reservas confirmadas (total)</div>
                         </div>
 
-                        <!-- Tarjeta 2: Ingresos proyectados -->
+                        <!-- Consula XPATH 2: Ingresos proyectados -->
                         <div class="tarjeta-estadistica estadistica-ingresos">
                             <div class="titulo-estadistica">Ingresos Estimados</div>
                             <div class="valor-estadistica">
@@ -76,7 +75,7 @@
                             <div class="subtitulo-estadistica">Suma de reservas con pago</div>
                         </div>
 
-                        <!-- Tarjeta 3: Media de comensales -->
+                        <!-- Consula XPATH 3: Media de comensales -->
                         <div class="tarjeta-estadistica estadistica-comensales">
                             <div class="titulo-estadistica">Media Comensales</div>
                             <div class="valor-estadistica">
@@ -85,7 +84,7 @@
                             <div class="subtitulo-estadistica">Comensales totales: <xsl:value-of select="sum(//reserva/datos-reserva/numero-comensales)"/></div>
                         </div>
 
-                        <!-- Tarjeta 4: Alerta de riesgo (Negocio) -->
+                        <!-- Consula XPATH 4: Alerta de riesgo (Negocio) -->
                         <div class="tarjeta-estadistica estadistica-alertas">
                             <div class="titulo-estadistica">Faltan por pagar</div>
                             <div class="valor-estadistica" style="color: var(--sweet-peony);">
@@ -94,7 +93,7 @@
                             <div class="subtitulo-estadistica">Reservas de riesgo sin importe</div>
                         </div>
 
-                        <!-- Tarjeta 5: Zonas (NUEVO XPATH) -->
+                        <!-- Consula XPATH 5: Zonas (NUEVO XPATH) -->
                         <div class="tarjeta-estadistica estadistica-zonas">
                             <div class="titulo-estadistica">Distribución Zonas</div>
                             <div class="valor-estadistica" style="font-size: 1.1em; line-height: 1.6;">
@@ -122,14 +121,13 @@
                         </thead>
                         <tbody>
                             <!-- 
-                              <xsl:apply-templates>: Esta etiqueta es magia pura. En lugar de escribir aquí mismo
-                              todo el código de las filas de la tabla (que haría que el archivo fuera larguísimo y lioso),
-                              le decimos: "Oye, busca todas las etiquetas 'reserva' dentro de 'reservas' en el XML, y 
-                              aplícales el molde (template) que he definido más abajo". Es como delegar el trabajo.
+                              <xsl:apply-templates>: Esta etiqueta hace que nos ahorremos mucho código. Hace un salto, le indicamos
+                              con el select que busque la etiqueta 'reserva' dentro de 'reservas' en el XML y que aplique
+                              el código (template) definido abajo.
                             -->
                             <xsl:apply-templates select="reservas/reserva">
                                 <!-- 
-                                  <xsl:sort>: Esto ordena los datos antes de pintarlos. 
+                                  <xsl:sort>: Esta etiqueta ordena los datos anteriores. 
                                   Aquí le decimos que los ordene por su fecha, de forma descendente (los más recientes primero).
                                 -->
                                 <xsl:sort select="datos-reserva/fecha" order="descending"/>
@@ -142,17 +140,15 @@
     </xsl:template>
     
     <!-- 
-      ========================================================================================
-      <xsl:template match="reserva">: ESTE ES EL MOLDE INDIVIDUAL.
+      <xsl:template match="reserva">: ES EL CÓDIGO INDIVIDUAL.
       Cada vez que el 'apply-templates' de arriba encuentre una reserva, usará todo este bloque 
       para convertir los datos de esa reserva concreta en una fila (<tr>) para nuestra tabla HTML.
-      ========================================================================================
     -->
     <xsl:template match="reserva">
         <tr>
             <!-- 
-              <xsl:attribute>: Sirve para inyectarle atributos HTML a la etiqueta en la que estamos (el <tr>).
-              Por ejemplo, aquí le estamos añadiendo la clase (class="...").
+              <xsl:attribute>: Sirve para añadir una clase de CSS a una etiqueta 
+              HTML de forma dinámica según los datos.
             -->
             <xsl:attribute name="class">
                 <!-- 
@@ -167,11 +163,12 @@
                     <xsl:when test="@estado = 'pendiente'">fila-pendiente</xsl:when>
                 </xsl:choose>
             </xsl:attribute>
-            
+            <!--
+                Primera td de la columna: Local/Estado Reserva
+            -->
             <td>
                 <span class="texto-id"><xsl:value-of select="@id"/></span><br/>
                 <span class="estado-icono">
-                    <!-- Semáforo sin emojis, con abreviaturas profesionales -->
                     <xsl:choose>
                         <xsl:when test="@estado = 'confirmada'">OK - </xsl:when>
                         <xsl:otherwise>PEND. - </xsl:otherwise>
@@ -180,27 +177,39 @@
                     <span class="capitalizar"><xsl:value-of select="@estado"/></span>
                 </span>
             </td>
-            
+            <!--
+                Segunda td de la columna: Información Cliente
+            -->
             <td>
+                <!-- 
+                    Aquí indiamos con el xs:value-off que queremsos que aparezca con el select
+                    y usamos el strong y el small para indicar el texto
+                -->
                 <strong><xsl:value-of select="cliente/nombre-cliente"/></strong><br/>
                 <small><xsl:value-of select="cliente/telefono-cliente"/></small><br/>
                 <small><xsl:value-of select="cliente/email"/></small>
             </td>
-            
+            <!--
+                Tercera td de la columna: Localización
+            -->
             <td>
                 <xsl:value-of select="local/nombre-local"/><br/>
                 <small><xsl:value-of select="local/direccion"/></small>
             </td>
-            
+            <!--
+                Cuarta td de la columna: Fecha y Hora
+            -->
             <td>
                 <xsl:value-of select="datos-reserva/fecha"/><br/>
                 <span class="hora"><xsl:value-of select="datos-reserva/hora"/></span>
             </td>
-            
+            <!--
+                Quinta td de la columna: Detalles Reserva
+            -->
             <td>
                 Mesa: <strong><xsl:value-of select="datos-reserva/zona-preferencia/@mesa"/></strong><br/>
                 
-                <!-- Lógica de Zonas y Puntos de Color -->
+                <!-- Choose que indica: Lógica de Zonas y Puntos de Color -->
                 <xsl:choose>
                     <xsl:when test="datos-reserva/zona-preferencia = 'interior'">
                         <span class="punto punto-interior"></span>
@@ -219,7 +228,7 @@
                 
                 Pax: <xsl:value-of select="datos-reserva/numero-comensales"/><br/>
                 
-                <!-- Lógica de Tipo de Plato -->
+                <!-- Choose que indica:Lógica de Tipo de Plato -->
                 <xsl:choose>
                     <xsl:when test="datos-reserva/@tipo-plato = 'degustacion'">
                         <span class="etiqueta-plato etiqueta-degustacion">Menú Degustación</span>
@@ -241,7 +250,9 @@
                     <br/><span class="etiqueta-alerta">GRUPO GRANDE</span>
                 </xsl:if>
             </td>
-            
+            <!--
+                Sexta td de la columna: Pago
+            -->
             <td style="text-align: center; vertical-align: middle;">
                 <xsl:if test="datos-reserva/@pago">
                     <span class="precio"><xsl:value-of select="datos-reserva/@pago"/>€</span>
@@ -250,7 +261,9 @@
                     <span class="alerta-pago">⚠️ Pendiente pago</span>
                 </xsl:if>
             </td>
-            
+            <!--
+                Septima td de la columna: Referencias y Alergias
+            -->
             <td style="text-align: center; vertical-align: middle;">
                 <!-- 
                   <xsl:for-each>: Es un bucle repetidor. 
@@ -259,7 +272,7 @@
                   Así, si un cliente tiene 3 alergias, imprimirá 3 spans automáticos.
                 -->
                 <xsl:for-each select="preferencias/alergias-restricciones/alergia[. != 'ninguna']">
-                    <!-- El punto "." significa "el valor actual por el que vamos en el bucle" (ej: "gluten") -->
+                    <!-- El punto "." significa "el valor actual por el que vamos en el bucle" (ej: "gluten") en el momento preciso-->
                     <span class="alerta-alergia">
                         <xsl:choose>
                             <xsl:when test=". = 'gluten'">🌾</xsl:when>
