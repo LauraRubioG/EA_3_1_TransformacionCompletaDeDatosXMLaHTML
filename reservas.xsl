@@ -135,6 +135,7 @@
                         </tbody>
                     </table>
                 </div>
+                <xsl:comment> Desarrollado por el equipo Marta Gonzalez y Laura Rubio </xsl:comment>
             </body>
         </html>
     </xsl:template>
