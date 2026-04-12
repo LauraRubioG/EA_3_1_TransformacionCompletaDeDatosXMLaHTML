@@ -61,7 +61,7 @@
                                   Va a reserva, al atributo estado y mira las que indica confirmadas y las cuenta.
                                 -->
                                 <xsl:value-of select="count(//reserva[@estado='confirmada'])"/>
-                                <span style="font-size:0.5em; color:#bdc3c7;"> / <xsl:value-of select="count(//reserva)"/></span>
+                                <span class="fraccion-total"> / <xsl:value-of select="count(//reserva)"/></span>
                             </div>
                             <div class="subtitulo-estadistica">Reservas confirmadas (total)</div>
                         </div>
@@ -87,7 +87,7 @@
                         <!-- Consula XPATH 4: Alerta de riesgo (Negocio) -->
                         <div class="tarjeta-estadistica estadistica-alertas">
                             <div class="titulo-estadistica">Faltan por pagar</div>
-                            <div class="valor-estadistica" style="color: var(--sweet-peony);">
+                            <div class="valor-estadistica valor-alerta">
                                 <xsl:value-of select="count(//reserva[not(datos-reserva/@pago)])"/>
                             </div>
                             <div class="subtitulo-estadistica">Reservas de riesgo sin importe</div>
@@ -96,7 +96,7 @@
                         <!-- Consula XPATH 5: Zonas (NUEVO XPATH) -->
                         <div class="tarjeta-estadistica estadistica-zonas">
                             <div class="titulo-estadistica">Distribución Zonas</div>
-                            <div class="valor-estadistica" style="font-size: 1.1em; line-height: 1.6;">
+                            <div class="valor-estadistica valor-zonas">
                                 <span class="punto punto-interior"></span>Int: <xsl:value-of select="count(//reserva[datos-reserva/zona-preferencia='interior'])"/> |
                                 <span class="punto punto-terraza"></span>Ter: <xsl:value-of select="count(//reserva[datos-reserva/zona-preferencia='terraza'])"/><br/>
                                 <span class="punto punto-jardin"></span>Jar: <xsl:value-of select="count(//reserva[datos-reserva/zona-preferencia='jardin'])"/> |
@@ -253,7 +253,7 @@
             <!--
                 Sexta td de la columna: Pago
             -->
-            <td style="text-align: center; vertical-align: middle;">
+            <td class="celda-centrada">
                 <xsl:if test="datos-reserva/@pago">
                     <span class="precio"><xsl:value-of select="datos-reserva/@pago"/>€</span>
                 </xsl:if>
@@ -264,7 +264,7 @@
             <!--
                 Septima td de la columna: Referencias y Alergias
             -->
-            <td style="text-align: center; vertical-align: middle;">
+            <td class="celda-centrada">
                 <!-- 
                   <xsl:for-each>: Es un bucle repetidor. 
                   Le estamos diciendo: "Busca dentro del XML todas las etiquetas <alergia> de este cliente 

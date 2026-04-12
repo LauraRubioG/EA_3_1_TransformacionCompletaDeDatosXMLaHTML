@@ -206,3 +206,23 @@ td {
 .etiqueta-degustacion { background-color: var(--sweet-peony); }
 .etiqueta-carta { background-color: var(--pink-carnation); }
 .etiqueta-menu { background-color: var(--dry-sage); }
+
+/* --- CLASES EXTRAÍDAS DEL XSL --- */
+.fraccion-total {
+    font-size: 0.5em;
+    color: #bdc3c7;
+}
+
+.valor-alerta {
+    color: var(--sweet-peony);
+}
+
+.valor-zonas {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.celda-centrada {
+    text-align: center;
+    vertical-align: middle;
+}
