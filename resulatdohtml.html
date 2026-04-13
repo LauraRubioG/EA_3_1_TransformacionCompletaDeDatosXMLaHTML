@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Panel de Control de Reservas Detallado</title>
+      <link rel="stylesheet" type="text/css" href="estilos.css">
+   </head>
+   <body><!-- Dashboard HTML generado dinámicamente mediante XSLT -->
+      <div class="contenedor">
+         <h1>DASHBOARD DE RESERVAS</h1>
+         <p class="total">Análisis y estado general del restaurante</p>
+         <div class="panel-cuadricula">
+            <div class="tarjeta-estadistica estadistica-estado">
+               <div class="titulo-estadistica">confirmaciones</div>
+               <div class="valor-estadistica">8<span class="fraccion-total"> / 10</span></div>
+               <div class="subtitulo-estadistica">Reservas confirmadas (total)</div>
+            </div>
+            <div class="tarjeta-estadistica estadistica-ingresos">
+               <div class="titulo-estadistica">Ingresos Estimados</div>
+               <div class="valor-estadistica">370.5€
+                  </div>
+               <div class="subtitulo-estadistica">Suma de reservas con pago</div>
+            </div>
+         </div>
+         <table>
+            <thead>
+               <tr>
+                  <th>Local / Estado Reserva</th>
+                  <th>Información Cliente</th>
+                  <th>Localización</th>
+                  <th>Fecha y Hora</th>
+                  <th>Detalles Reserva</th>
+                  <th>Pago</th>
+                  <th>Preferencias y Alergias</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SS-3</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Sofía Gil</strong><br><small>600000010</small><br><small>sofia@email.com</small></td>
+                  <td>Sabores Globales S<br><small>Avenida de la Constitución 5, Sevilla</small></td>
+                  <td>2024-06-15<br><span class="hora">21:00</span></td>
+                  <td>
+                     Mesa: <strong>J-05</strong><br><span class="punto punto-jardin"></span>
+                     Zona: <span class="capitalizar">jardin</span><br>
+                     
+                     Pax: 2<br><span class="etiqueta-plato etiqueta-degustacion">Menú Degustación</span></td>
+                  <td class="celda-centrada"><span class="precio">110.00€</span></td>
+                  <td class="celda-centrada"><small><i>Prefieren el jardín</i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SZ-1</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Marcos Oro</strong><br><small>600000009</small><br><small>marcos@email.com</small></td>
+                  <td>Sabores Globales E<br><small>Paseo Independencia 10, Zaragoza</small></td>
+                  <td>2024-06-14<br><span class="hora">22:15</span></td>
+                  <td>
+                     Mesa: <strong>I-04</strong><br><span class="punto punto-interior"></span>
+                     Zona: <span class="capitalizar">interior</span><br>
+                     
+                     Pax: 4<br><span class="etiqueta-plato etiqueta-carta">A la Carta</span></td>
+                  <td class="celda-centrada"><span class="precio">35.00€</span></td>
+                  <td class="celda-centrada"><span class="alerta-alergia">🌱 Alergia: <span class="capitalizar">soja</span></span><br><small><i>Mesa cerca del aire acondicionado</i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SM-1</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Rosa Díaz</strong><br><small>600000008</small><br><small>rosa@email.com</small></td>
+                  <td>Sabores Globales S<br><small>Calle Larios 2, Málaga</small></td>
+                  <td>2024-06-12<br><span class="hora">14:00</span></td>
+                  <td>
+                     Mesa: <strong>T-08</strong><br><span class="punto punto-terraza"></span>
+                     Zona: <span class="capitalizar">terraza</span><br>
+                     
+                     Pax: 2<br><span class="etiqueta-plato etiqueta-menu">Menú del Día</span></td>
+                  <td class="celda-centrada"><span class="alerta-pago">⚠️ Pendiente pago</span></td>
+                  <td class="celda-centrada"><span class="etiqueta-bebe">
+                        👶🪑 Sillita bebé
+                        </span><br><small><i></i></small></td>
+               </tr>
+               <tr class="fila-pendiente">
+                  <td><span class="texto-id">SB-1</span><br><span class="estado-icono">PEND. - <span class="capitalizar">pendiente</span></span></td>
+                  <td><strong>Iker Muni</strong><br><small>600000007</small><br><small>iker@email.com</small></td>
+                  <td>Sabores Globales N<br><small>Gran Vía 40, Bilbao</small></td>
+                  <td>2024-06-10<br><span class="hora">21:45</span></td>
+                  <td>
+                     Mesa: <strong>I-15</strong><br><span class="punto punto-interior"></span>
+                     Zona: <span class="capitalizar">interior</span><br>
+                     
+                     Pax: 6<br><span class="etiqueta-plato etiqueta-carta">A la Carta</span><br><span class="etiqueta-alerta">GRUPO GRANDE</span></td>
+                  <td class="celda-centrada"><span class="precio">60.00€</span></td>
+                  <td class="celda-centrada"><span class="alerta-alergia">🥚 Alergia: <span class="capitalizar">huevo</span></span><br><small><i>Reunión de empresa</i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SM-2</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Elena Sanz</strong><br><small>600000006</small><br><small>elena@email.com</small></td>
+                  <td>Sabores Globales N<br><small>Calle de la Princesa 12, Madrid</small></td>
+                  <td>2024-06-08<br><span class="hora">13:30</span></td>
+                  <td>
+                     Mesa: <strong>B-05</strong><br><span class="punto punto-barra"></span>
+                     Zona: <span class="capitalizar">barra</span><br>
+                     
+                     Pax: 1<br><span class="etiqueta-plato etiqueta-menu">Menú del Día</span></td>
+                  <td class="celda-centrada"><span class="precio">15.00€</span></td>
+                  <td class="celda-centrada"><small><i>Cliente habitual</i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SV-1</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Pedro Soler</strong><br><small>600000005</small><br><small>pedro@email.com</small></td>
+                  <td>Sabores Globales O<br><small>Calle de la Paz 8, Valencia</small></td>
+                  <td>2024-06-07<br><span class="hora">22:00</span></td>
+                  <td>
+                     Mesa: <strong>J-01</strong><br><span class="punto punto-jardin"></span>
+                     Zona: <span class="capitalizar">jardin</span><br>
+                     
+                     Pax: 5<br><span class="etiqueta-plato etiqueta-carta">A la Carta</span><br><span class="etiqueta-alerta">GRUPO GRANDE</span></td>
+                  <td class="celda-centrada"><span class="alerta-pago">⚠️ Pendiente pago</span></td>
+                  <td class="celda-centrada"><span class="alerta-alergia">🦐 Alergia: <span class="capitalizar">marisco</span></span><br><span class="etiqueta-bebe">
+                        👶🪑 Sillita bebé
+                        </span><br><small><i>Mesa tranquila</i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SB-1</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Marta Rius</strong><br><small>600000004</small><br><small>marta@email.com</small></td>
+                  <td>Sabores Globales E<br><small>Carrer de Mallorca 200, Barcelona</small></td>
+                  <td>2024-06-05<br><span class="hora">20:30</span></td>
+                  <td>
+                     Mesa: <strong>B-02</strong><br><span class="punto punto-barra"></span>
+                     Zona: <span class="capitalizar">barra</span><br>
+                     
+                     Pax: 2<br><span class="etiqueta-plato etiqueta-degustacion">Menú Degustación</span></td>
+                  <td class="celda-centrada"><span class="precio">85.00€</span></td>
+                  <td class="celda-centrada"><span class="alerta-alergia">🥜 Alergia: <span class="capitalizar">frutos secos</span></span><br><small><i>Aniversario</i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SS-1</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Ana García</strong><br><small>600000002</small><br><small>ana@email.com</small></td>
+                  <td>Sabores Globales S<br><small>Avenida de la Constitución 5, Sevilla</small></td>
+                  <td>2024-06-02<br><span class="hora">21:00</span></td>
+                  <td>
+                     Mesa: <strong>T-05</strong><br><span class="punto punto-terraza"></span>
+                     Zona: <span class="capitalizar">terraza</span><br>
+                     
+                     Pax: 4<br><span class="etiqueta-plato etiqueta-carta">A la Carta</span></td>
+                  <td class="celda-centrada"><span class="precio">40.00€</span></td>
+                  <td class="celda-centrada"><small><i>Mesa con sombra</i></small></td>
+               </tr>
+               <tr class="fila-pendiente">
+                  <td><span class="texto-id">SS-2</span><br><span class="estado-icono">PEND. - <span class="capitalizar">pendiente</span></span></td>
+                  <td><strong>Luis Mara</strong><br><small>600000003</small><br><small>luis@email.com</small></td>
+                  <td>Sabores Globales S<br><small>Avenida de la Constitución 5, Sevilla</small></td>
+                  <td>2024-06-02<br><span class="hora">14:30</span></td>
+                  <td>
+                     Mesa: <strong>I-10</strong><br><span class="punto punto-interior"></span>
+                     Zona: <span class="capitalizar">interior</span><br>
+                     
+                     Pax: 3<br><span class="etiqueta-plato etiqueta-menu">Menú del Día</span></td>
+                  <td class="celda-centrada"><span class="alerta-pago">⚠️ Pendiente pago</span></td>
+                  <td class="celda-centrada"><span class="alerta-alergia">🥛 Alergia: <span class="capitalizar">lactosa</span></span><br><span class="etiqueta-bebe">
+                        👶🪑 Sillita bebé
+                        </span><br><small><i></i></small></td>
+               </tr>
+               <tr class="fila-confirmada">
+                  <td><span class="texto-id">SM-1</span><br><span class="estado-icono">OK - <span class="capitalizar">confirmada</span></span></td>
+                  <td><strong>Juan Pérez</strong><br><small>600000001</small><br><small>juan@email.com</small></td>
+                  <td>Sabores Globales N<br><small>Calle de la Princesa 12, Madrid</small></td>
+                  <td>2024-06-01<br><span class="hora">14:00</span></td>
+                  <td>
+                     Mesa: <strong>I-01</strong><br><span class="punto punto-interior"></span>
+                     Zona: <span class="capitalizar">interior</span><br>
+                     
+                     Pax: 2<br><span class="etiqueta-plato etiqueta-menu">Menú del Día</span></td>
+                  <td class="celda-centrada"><span class="precio">25.50€</span></td>
+                  <td class="celda-centrada"><span class="alerta-alergia">🌾 Alergia: <span class="capitalizar">gluten</span></span><br><span class="etiqueta-bebe">
+                        👶🪑 Sillita bebé
+                        </span><br><small><i>Cerca de la entrada</i></small></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <!-- Desarrollado por el equipo Marta Gonzalez y Laura Rubio --></body>
+</html>
